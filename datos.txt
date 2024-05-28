@@ -1,0 +1,55 @@
+dotnet --version
+dotnet --info
+dotnet new globaljson --sdk-version 8.0.202
+dotnet new sln --name CleanArchitecture
+dotnet new classlib -o src/CleanArchitecture/CleanArchitecture.Domain
+dotnet sln add src/CleanArchitecture/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj
+dotnet build
+
+cd src/CleanArchitecture/CleanArchitecture.Domain
+
+
+dotnet new classlib -o src/CleanArchitecture/CleanArchitecture.Application
+dotnet sln add src/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Application.csproj
+dotnet add src/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Application.csproj reference src/CleanArchitecture/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj
+dotnet build
+
+cd src/CleanArchitecture/CleanArchitecture.Application
+dotnet add package MediatR --version 12.1.1
+
+dotnet add package Dapper --version 2.1.15
+
+dotnet add package Microsoft.Extensions.Logging.Abstractions --version 8.0.0-rc.2.23479.6
+
+dotnet add package FluentValidation.DependencyInjectionExtensions --version 11.8.0
+
+dotnet new classlib -o src/CleanArchitecture/CleanArchitecture.Infrastructure
+dotnet sln add src/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj
+dotnet add src/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj reference src/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Application.csproj
+
+cd src/CleanArchitecture/CleanArchitecture.Infrastructure
+dotnet add package Microsoft.Extensions.Configuration.Abstractions --version 7.0.0
+
+dotnet add package Microsoft.EntityFrameworkCore --version 7.0.11
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.11
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.11
+dotnet add package EFCore.NamingConventions --version 7.0.2
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.0-rc.1.23421.29
+
+dotnet new webapi -o src/CleanArchitecture/CleanArchitecture.Api --name CleanArchitecture.Api
+dotnet sln add src/CleanArchitecture/CleanArchitecture.Api/CleanArchitecture.Api.csproj
+otnet add src/CleanArchitecture/CleanArchitecture.Api/CleanArchitecture.Api.csproj reference src/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj
+dotnet add src/CleanArchitecture/CleanArchitecture.Api/CleanArchitecture.Api.csproj reference src/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Application.csproj
+
+cd src/CleanArchitecture/CleanArchitecture.Api
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.11
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.11
+
+dotnet tool uninstall dotnet-ef --global
+dotnet tool install --global dotnet-ef --version 8.0.2
+
+dotnet ef --verbose migrations add InitialCreate -p src/CleanArchitecture/CleanArchitecture.Infrastructure -s src/CleanArchitecture/CleanArchitecture.Api 
+dotnet run --project src/CleanArchitecture/CleanArchitecture.Api 
+
+cd src/CleanArchitecture/CleanArchitecture.Api 
+dotnet add package Bogus --version 34.0.0
