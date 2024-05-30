@@ -53,3 +53,9 @@ dotnet run --project src/CleanArchitecture/CleanArchitecture.Api
 
 cd src/CleanArchitecture/CleanArchitecture.Api 
 dotnet add package Bogus --version 34.0.0
+
+cd src/CleanArchitecture/CleanArchitecture.Application/
+dotnet add package BCrypt.Net-Next --version 4.0.3
+
+cd src/CleanArchitecture/CleanArchitecture.Infrastructure
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.1

@@ -10,3 +10,4 @@
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Domain/obj/Debug/net8.0/CleanArchitecture.Domain.pdb
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Domain/obj/Debug/net8.0/ref/CleanArchitecture.Domain.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Domain/obj/Debug/net8.0/CleanArchitecture.Domain.csproj.AssemblyReference.cache
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Domain/obj/Debug/net8.0/CleanArchitecture.Domain.sourcelink.json

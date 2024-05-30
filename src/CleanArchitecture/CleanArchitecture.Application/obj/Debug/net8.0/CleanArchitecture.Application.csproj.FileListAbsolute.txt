@@ -13,3 +13,4 @@
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Application/obj/Debug/net8.0/refint/CleanArchitecture.Application.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Application/obj/Debug/net8.0/CleanArchitecture.Application.pdb
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Application/obj/Debug/net8.0/ref/CleanArchitecture.Application.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Application/obj/Debug/net8.0/CleanArchitecture.Application.sourcelink.json

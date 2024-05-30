@@ -62,3 +62,5 @@
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Mono.TextTemplating.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/System.CodeDom.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Bogus.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/obj/Debug/net8.0/CleanArchitecture.Api.sourcelink.json

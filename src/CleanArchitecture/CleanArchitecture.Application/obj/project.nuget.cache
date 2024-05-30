@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ahb346Pf0QVfYuDBqH7jY4rsYtovS0cHEFDVsowrhPZ7Fb7tEg7t93fB0ox/todSUMmPS/yjLX7JYHH0axT5UA==",
+  "dgSpecHash": "zcY0YM0zrjpO/H3+VlACyTqEulZdOR1aKt5S5oObyNgHNBu+N36l3DYQpTBsVSCaeXCJr45VnXT33DzNlX00SQ==",
   "success": true,
   "projectFilePath": "/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Application.csproj",
   "expectedPackageFiles": [
+    "/Users/edugonpan/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/dapper/2.1.15/dapper.2.1.15.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.8.0/fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
