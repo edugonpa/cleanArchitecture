@@ -3,7 +3,7 @@ using CleanArchitecture.Application.Abstractions.Messaging;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Users;
 
-namespace CleanArchitecture.Application.Users;
+namespace CleanArchitecture.Application.Users.LoginUser;
 
 internal sealed class LoginCommandHandler : ICommandHandler<LoginCommand, string>
 {

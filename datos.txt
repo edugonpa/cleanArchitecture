@@ -59,3 +59,6 @@ dotnet add package BCrypt.Net-Next --version 4.0.3
 
 cd src/CleanArchitecture/CleanArchitecture.Infrastructure
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.1
+
+eliminar las migraciones previas
+dotnet ef --verbose migrations add InitialCreate -p src/CleanArchitecture/CleanArchitecture.Infrastructure -s src/CleanArchitecture/CleanArchitecture.Api

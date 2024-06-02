@@ -1,6 +1,9 @@
 using CleanArchitecture.Api.Extensions;
+using CleanArchitecture.Api.OptionsSetup;
 using CleanArchitecture.Application;
+using CleanArchitecture.Application.Abstractions.Authentication;
 using CleanArchitecture.Infrastructure;
+using CleanArchitecture.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,13 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
     
-    // o => o.TokenValidationParameters = new (){
-    //     ValidIssuer = "http://localhost:9011",
-    //     ValidateIssuer = true,
-    //     ValidAudience = "http://localhost:9011",
-    //     ValidateAudience = true,
-    //     IssuerSigningKey = 
-    // });
+builder.Services.ConfigureOptions<JwtOptionsSetup>();
+builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
+
+builder.Services.AddTransient<IJwtProvider, JwtProvider>();
+
+builder.Services.AddAuthorization();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -37,8 +39,12 @@ if (app.Environment.IsDevelopment())
 
 app.ApplyMigration();
 app.SeedData();
+app.SeedDataAuthentication();
 
 app.UseCustomExceptionHandler();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

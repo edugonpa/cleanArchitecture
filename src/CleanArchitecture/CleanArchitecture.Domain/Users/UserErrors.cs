@@ -7,8 +7,13 @@ public static class UserErrors
         "No existe el usuario buscado por este id"
     );
 
-        public static Error InvalidCredentials = new Error(
+    public static Error InvalidCredentials = new Error(
         "User.InvalidCredentials",
         "Las credenciales son incorrectas"
+    );
+
+    public static Error AlreadyExists = new Error(
+        "User.AlreadyExists",
+        "El usuario ya existe en la base de datos"
     );
 }
