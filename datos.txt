@@ -62,3 +62,8 @@ dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.1
 
 eliminar las migraciones previas
 dotnet ef --verbose migrations add InitialCreate -p src/CleanArchitecture/CleanArchitecture.Infrastructure -s src/CleanArchitecture/CleanArchitecture.Api
+
+
+"ConnectionStrings": {
+    "ConnectionString" : "Host=localhost;Port=5432;Database=cleanarquitecture;Username=cleanarquitecture_owner;Password=CITnpek93AEX;"
+  },
