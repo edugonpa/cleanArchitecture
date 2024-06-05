@@ -67,3 +67,8 @@ dotnet ef --verbose migrations add InitialCreate -p src/CleanArchitecture/CleanA
 "ConnectionStrings": {
     "ConnectionString" : "Host=localhost;Port=5432;Database=cleanarquitecture;Username=cleanarquitecture_owner;Password=CITnpek93AEX;"
   },
+
+dotnet ef migrations add InitialCreate -p src/CleanArchitecture/CleanArchitecture.Infrastructure -s src/CleanArchitecture/CleanArchitecture.Api
+
+sudo docker compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
