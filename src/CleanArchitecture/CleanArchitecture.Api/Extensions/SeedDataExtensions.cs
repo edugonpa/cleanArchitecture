@@ -35,7 +35,7 @@ public static class SeedDataExtensions
                 user = User.Create(
                     new Nombre("Admin"),
                     new Apellido("Admin"),
-                    new Email("edugonpa@gmail.com"),
+                    new Email("admin@gmail.com"),
                     new PasswordHash(passwordHash)
                 );
 
