@@ -5,6 +5,7 @@ using CleanArchitecture.Application.Abstractions.Authentication;
 using CleanArchitecture.Infrastructure;
 using CleanArchitecture.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
 builder.Services.AddTransient<IJwtProvider, JwtProvider>();
 
 builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionAuthorizationPolicyProvider>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

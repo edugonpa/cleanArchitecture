@@ -1,5 +1,6 @@
 using CleanArchitecture.Application.Vehiculos.SearchVehiculos;
 using CleanArchitecture.Domain.Permissions;
+using CleanArchitecture.Infrastructure.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
