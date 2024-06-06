@@ -27,5 +27,5 @@ services:
     environment:
       - ACCEPT_EULA=Y
     ports:
-      - 5341:5441
+      - 5341:5341
       - 8081:80
