@@ -64,3 +64,15 @@
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Bogus.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/BCrypt.Net-Next.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/obj/Debug/net8.0/CleanArchitecture.Api.sourcelink.json
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/appsettings.Test.json
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.PeriodicBatching.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.Seq.dll

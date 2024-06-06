@@ -21,7 +21,7 @@ internal sealed class LoginCommandHandler : ICommandHandler<LoginCommand, string
         //1. Verificar que el usuario exista en la base de datos
         // buscar un usuario en la bd por el email
         var user = await _userRepository.GetByEmailAsync(new Email(request.Email), cancellationToken);
-        if (user == null)
+        if (user is null)
         {
             return Result.Failure<string>(UserErrors.NotFound);
         }

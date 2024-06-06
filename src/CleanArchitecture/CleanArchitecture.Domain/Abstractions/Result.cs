@@ -14,7 +14,7 @@ public class Result
             throw new InvalidOperationException();
         }
 
-        if(!isSuccess && error != Error.None)
+        if(!isSuccess && error == Error.None)
         {
             throw new InvalidOperationException();
         }
@@ -31,7 +31,7 @@ public class Result
         => new (value, true, Error.None);
     public static Result<TValue> Failure<TValue>(Error error)
         => new (default, false, error);
-    public static Result<TValue> Create<TValue>(TValue value)
+    public static Result<TValue> Create<TValue>(TValue? value)
         => value is not null 
         ? Success(value) 
         : Failure<TValue>(Error.NullValue);
@@ -47,7 +47,7 @@ public class Result<TValue> : Result
     }
 
     [NotNull]
-    public TValue? Value => IsSuccess 
+    public TValue Value => IsSuccess 
     ? _value! 
     : throw new InvalidOperationException("El resultado del valor de error no es admisible");
 
