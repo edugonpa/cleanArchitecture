@@ -1,5 +1,6 @@
 using System.Net;
 using CleanArchitecture.Application.Vehiculos.GetVehiculosByPagination;
+using CleanArchitecture.Application.Vehiculos.GetVehiculosKitByPagination;
 using CleanArchitecture.Application.Vehiculos.SearchVehiculos;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Permissions;
@@ -45,6 +46,17 @@ public class VehiculosController : ControllerBase
     )
     {
         var resultados = await _sender.Send(request);
+        return Ok(resultados);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("getPaginationKit", Name = "PaginationVehiculosKit")]
+    [ProducesResponseType(typeof(PaginationResult<Vehiculo, VehiculoId>), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<PaginationResult<Vehiculo, VehiculoId>>> GetPagination(
+        [FromQuery] GetVehiculosKitByPaginationQuery paginationQuery
+    )
+    {
+        var resultados = await _sender.Send(paginationQuery);
         return Ok(resultados);
     }
 }

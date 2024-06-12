@@ -76,3 +76,5 @@
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.File.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.PeriodicBatching.dll
 /Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/Serilog.Sinks.Seq.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/LinqKit.Core.dll
+/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/bin/Debug/net8.0/LinqKit.Microsoft.EntityFrameworkCore.dll

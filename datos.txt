@@ -78,3 +78,5 @@ dotnet add package Serilog.Sinks.Seq --version 6.0.0
 
 cd src/CleanArchitecture/CleanArchitecture.Application
 dotnet add package Serilog --version 3.1.1
+
+cd src/CleanArchitecture/CleanArchitecture.Application

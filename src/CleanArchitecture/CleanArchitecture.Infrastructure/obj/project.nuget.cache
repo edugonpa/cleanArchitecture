@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "by4uUMhEAOw=",
+  "dgSpecHash": "bHAR9cqvprU=",
   "success": true,
   "projectFilePath": "/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "/Users/edugonpan/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.8.0/fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/edugonpan/.nuget/packages/linqkit.core/1.2.4/linqkit.core.1.2.4.nupkg.sha512",
+    "/Users/edugonpan/.nuget/packages/linqkit.microsoft.entityframeworkcore/7.1.4/linqkit.microsoft.entityframeworkcore.7.1.4.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.1/microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
