@@ -1,4 +1,5 @@
 using CleanArchitecture.Domain.Abstractions;
+using CleanArchitecture.Infrastructure.Specifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Repositories;
@@ -25,5 +26,27 @@ where TEntityId : class
 
     public void Add(TEntity entity){
         DbContext.Add(entity);
+    }
+
+    public IQueryable<TEntity> ApplySpecificacation(
+        ISpecification<TEntity, TEntityId> spec
+    )
+    {
+        return SpecificationEvaluator<TEntity, TEntityId>
+            .GetQuery(DbContext.Set<TEntity>().AsQueryable(), spec);
+    }
+
+    public async Task<IReadOnlyList<TEntity>> GetAllWithSpec(
+        ISpecification<TEntity, TEntityId> spec
+    )
+    {
+        return await ApplySpecificacation(spec).ToListAsync();
+    }
+
+    public async Task<int> CountAsync(
+        ISpecification<TEntity,TEntityId> spec
+    )
+    {
+        return await ApplySpecificacation(spec).CountAsync();
     }
 }
