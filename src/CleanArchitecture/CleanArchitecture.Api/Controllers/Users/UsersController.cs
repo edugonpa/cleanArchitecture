@@ -1,4 +1,7 @@
 using System.Net;
+using Asp.Versioning;
+using CleanArchitecture.Api.Utils;
+using CleanArchitecture.Application.Users.GetUsersDapperPagination;
 using CleanArchitecture.Application.Users.GetUsersPagination;
 using CleanArchitecture.Application.Users.LoginUser;
 using CleanArchitecture.Application.Users.RegisterUser;
@@ -11,7 +14,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace CleanArchitecture.Api.Controllers.Users;
 
 [ApiController]
-[Route("api/users")]
+// [ApiVersion(ApiVersions.V1, Deprecated = true)]
+[ApiVersion(ApiVersions.V1)]
+// [ApiVersion(ApiVersions.V2)]
+[Route("api/v{version:apiVersion}/users")]
 public class UserController : ControllerBase
 {
     private readonly ISender _sender;
@@ -23,7 +29,8 @@ public class UserController : ControllerBase
 
     [AllowAnonymous]
     [HttpPost("login")]
-    public async Task<IActionResult> Login(
+    [MapToApiVersion(ApiVersions.V1)]
+    public async Task<IActionResult> LoginV1(
         [FromBody] LoginUserRequest request,
         CancellationToken cancellationToken
     )
@@ -38,6 +45,25 @@ public class UserController : ControllerBase
 
         return Ok(result.Value);
     }
+
+    // [AllowAnonymous]
+    // [HttpPost("login")]
+    // [MapToApiVersion(ApiVersions.V2)]
+    // public async Task<IActionResult> LoginV2(
+    //     [FromBody] LoginUserRequest request,
+    //     CancellationToken cancellationToken
+    // )
+    // {
+    //     var command = new LoginCommand(request.Email, request.Password);
+    //     var result = await _sender.Send(command, cancellationToken);
+
+    //     if(result.IsFailure)
+    //     {
+    //         return Unauthorized(result.Error);
+    //     }
+
+    //     return Ok(result.Value);
+    // }
 
     [AllowAnonymous]
     [HttpPost("register")]
@@ -64,11 +90,24 @@ public class UserController : ControllerBase
 
     [AllowAnonymous]
     [HttpGet("getPagination", Name = "PaginationUsers")]
-    [ProducesResponseType(typeof(PaginationResult<User, UserId>), 
+    [ProducesResponseType(typeof(PagedResults<User, UserId>), 
         (int)HttpStatusCode.OK
         )]
     public async Task<ActionResult<PagedResults<User, UserId>>> GetPagination(
         [FromQuery] GetUsersPaginationQuery paginationQuery
+    )
+    {
+        var resultados = await _sender.Send(paginationQuery);
+        return Ok(resultados);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("getPaginationDapper", Name = "GetPaginationDapper")]
+    [ProducesResponseType(typeof(PagedDapperResults<UserPaginationData>), 
+        (int)HttpStatusCode.OK
+        )]
+    public async Task<ActionResult<PagedDapperResults<UserPaginationData>>> getPaginationDapper(
+        [FromQuery] GetUsersDapperPaginationQuery paginationQuery
     )
     {
         var resultados = await _sender.Send(paginationQuery);

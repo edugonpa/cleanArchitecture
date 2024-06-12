@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "sPFkyWMPZe0=",
+  "dgSpecHash": "HWyIRkvHaEo=",
   "success": true,
   "projectFilePath": "/Users/edugonpan/Documents/CleanArchitecture/src/CleanArchitecture/CleanArchitecture.Api/CleanArchitecture.Api.csproj",
   "expectedPackageFiles": [
+    "/Users/edugonpan/.nuget/packages/asp.versioning.abstractions/8.0.0/asp.versioning.abstractions.8.0.0.nupkg.sha512",
+    "/Users/edugonpan/.nuget/packages/asp.versioning.http/8.0.0/asp.versioning.http.8.0.0.nupkg.sha512",
+    "/Users/edugonpan/.nuget/packages/asp.versioning.mvc/8.0.0/asp.versioning.mvc.8.0.0.nupkg.sha512",
+    "/Users/edugonpan/.nuget/packages/asp.versioning.mvc.apiexplorer/8.0.0/asp.versioning.mvc.apiexplorer.8.0.0.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/bogus/34.0.1/bogus.34.0.1.nupkg.sha512",
     "/Users/edugonpan/.nuget/packages/dapper/2.1.15/dapper.2.1.15.nupkg.sha512",
