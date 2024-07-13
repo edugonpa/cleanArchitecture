@@ -85,3 +85,13 @@ cd src/CleanArchitecture/CleanArchitecture.Application
 cd src/CleanArchitecture/CleanArchitecture.Infrastructure 
 dotnet add package Asp.Versioning.Mvc --version 8.0.0
 dotnet add package Asp.Versioning.Mvc.ApiExplorer --version 8.0.0
+
+cd src/CleanArchitecture/CleanArchitecture.Infrastructure 
+dotnet add package Quartz.Extensions.Hosting --version 3.7.0
+
+
+CleanArchitecture % dotnet ef migrations add OutboxCreationMigration -p src/CleanArchitecture/CleanArchitecture.Infrastructure -s src/CleanArchitecture/CleanArchitecture.Api/
+
+
+dotnet run --project src/CleanArchitecture/CleanArchitecture.Api
+
