@@ -196,3 +196,12 @@ ModelManifest.xml
 
 # Exclude vscode folder
 .vscode/
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.pdb
