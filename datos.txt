@@ -95,3 +95,8 @@ CleanArchitecture % dotnet ef migrations add OutboxCreationMigration -p src/Clea
 
 dotnet run --project src/CleanArchitecture/CleanArchitecture.Api
 
+dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Domain.UnitTests
+dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Application.UnitTests
+dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.ArchitectureTests
+dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests
+otnet new classlib -o test/CleanArchitecture/CleanArchitecture.Api.Functional.Tests
