@@ -1,3 +1,6 @@
+using Asp.Versioning;
+using Asp.Versioning.Builder;
+using CleanArchitecture.Api.Controllers.Alquileres;
 using CleanArchitecture.Api.Documentation;
 using CleanArchitecture.Api.Extensions;
 using CleanArchitecture.Api.OptionsSetup;
@@ -19,7 +22,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
-    
+
 builder.Services.ConfigureOptions<JwtOptionsSetup>();
 builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
 
@@ -37,13 +40,15 @@ builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.CustomSchemaIds( type => type.ToString() );
+    options.CustomSchemaIds(type => type.ToString());
 });
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
+
+app.MapGet("/", () => "Hola Clean Architecture en .Net University");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -76,5 +81,16 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+ApiVersionSet apiVersion = app.NewApiVersionSet()
+    .HasApiVersion(new ApiVersion(1))
+    .ReportApiVersions()
+    .Build();
+
+var routeGroupBuilder = app
+    .MapGroup("api/v{version:apiVersion}")
+    .WithApiVersionSet(apiVersion);
+
+routeGroupBuilder.MapAlquilerEndpoints();
 
 app.Run();
