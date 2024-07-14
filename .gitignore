@@ -205,3 +205,7 @@ ModelManifest.xml
 *.dylib
 *.test
 *.pdb
+
+# Exclude bin and obj folder
+.bin/
+.obj/
