@@ -25,4 +25,14 @@ internal sealed class UserRepository
         return await DbContext.Set<User>()
             .AnyAsync(x => x.Email == email);
     }
+
+    public override void Add(User user)
+    {
+        foreach (var role in user.Roles!)
+        {
+            DbContext.Attach(role);
+        }
+
+        DbContext.Add(user);
+    }
 }

@@ -99,4 +99,21 @@ dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Domain.UnitTests
 dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Application.UnitTests
 dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.ArchitectureTests
 dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests
-otnet new classlib -o test/CleanArchitecture/CleanArchitecture.Api.Functional.Tests
+dotnet new classlib -o test/CleanArchitecture/CleanArchitecture.Api.Functional.Tests
+
+
+cd test/CleanArchitecture/CleanArchitecture.Domain.UnitTests
+dotnet add package xunit --version 2.6.6
+dotnet add package xunit.runner.visualstudio --version 2.5.6
+dotnet add package FluentAssertions --version 6.12.0
+dotnet add package Microsoft.NET.Test.Sdk --version 17.9.0
+dotnet add package coverlet.collector --version 6.0.0
+
+
+cd raiz
+dotnet sln add test/CleanArchitecture/CleanArchitecture.Domain.UnitTests/CleanArchitecture.Domain.UnitTests.csproj
+dotnet add test/CleanArchitecture/CleanArchitecture.Domain.UnitTests/CleanArchitecture.Domain.UnitTests.csproj reference src/CleanArchitecture/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj
+dotnet build CleanArchitecture.sln 
+
+dotnet test CleanArchitecture.sln
+
