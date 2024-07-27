@@ -20,4 +20,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalVisibleTo Include="CleanArchitecture.Application.UnitTests"/>
+  </ItemGroup>
+
 </Project>
