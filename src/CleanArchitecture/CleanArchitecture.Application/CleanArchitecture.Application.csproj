@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalVisibleTo Include="CleanArchitecture.Application.UnitTests"/>
+    <InternalsVisibleTo Include="CleanArchitecture.Application.UnitTests" />
   </ItemGroup>
 
 </Project>

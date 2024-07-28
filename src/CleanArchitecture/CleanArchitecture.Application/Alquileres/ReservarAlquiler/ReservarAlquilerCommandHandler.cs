@@ -8,7 +8,7 @@ using CleanArchitecture.Domain.Vehiculos;
 
 namespace CleanArchitecture.Application.Alquileres.ReservarAlquiler;
 
-public sealed class ReservarAlquilerCommandHandler :
+internal sealed class ReservarAlquilerCommandHandler :
     ICommandHandler<ReservarAlquilerCommand, Guid>
 {
 

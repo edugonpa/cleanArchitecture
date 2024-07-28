@@ -144,3 +144,8 @@ cd test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests
 dotnet add package Microsoft.AspNetCore.Mvc.Testing --version 8.0.0-rc.2.23480.2
 
 dotnet sln add test/CleanArchitecture/CleanArchitecture.Api.Functional.Tests/CleanArchitecture.Api.Functional.Tests.csproj
+
+
+dotnet sln add test/CleanArchitecture/CleanArchitecture.ArchitectureTests/CleanArchitecture.ArchitectureTests.csproj
+cd test/CleanArchitecture/CleanArchitecture.ArchitectureTests
+dotnet add package NetArchTest.Rules --version 1.3.2
