@@ -11,14 +11,14 @@ internal sealed class UserRepository
     {
     }
 
-    public async Task<User?> GetByEmailAsync(Email email, CancellationToken cancellationToken = default)
+    public async Task<User?> GetByEmailAsync(Domain.Users.Email email, CancellationToken cancellationToken = default)
     {
         return await DbContext.Set<User>()
        .FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
     }
 
     public async Task<bool> IsUserExists(
-        Email email, 
+        Domain.Users.Email email, 
         CancellationToken cancellationToken = default
         )
     {
