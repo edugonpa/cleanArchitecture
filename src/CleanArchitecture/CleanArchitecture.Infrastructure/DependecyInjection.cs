@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using CleanArchitecture.Application.Abstractions.Authentication;
 using CleanArchitecture.Application.Abstractions.Clock;
 using CleanArchitecture.Application.Abstractions.Data;
 using CleanArchitecture.Application.Abstractions.Email;
@@ -7,11 +8,13 @@ using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Alquileres;
 using CleanArchitecture.Domain.Users;
 using CleanArchitecture.Domain.Vehiculos;
+using CleanArchitecture.Infrastructure.Authentication;
 using CleanArchitecture.Infrastructure.Clock;
 using CleanArchitecture.Infrastructure.Data;
 using CleanArchitecture.Infrastructure.Outbox;
 using CleanArchitecture.Infrastructure.Repositories;
 using Dapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -67,6 +70,9 @@ public static class DependencyInjection
 
         services.AddSingleton<ISqlConnectionFactory>( _ => new SqlConnectionFactory(connectionString));
         SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
+
+        services.AddHttpContextAccessor();
+        services.AddScoped<IUserContext, UserContext>();
 
         return services;
     }

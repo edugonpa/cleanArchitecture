@@ -128,3 +128,19 @@ dotnet add package Microsoft.NET.Test.Sdk --version 17.9.0
 dotnet add package coverlet.collector --version 6.0.0
 dotnet add package NSubstitute --version 5.1.0
 
+dotnet sln add test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests/CleanArchitecture.Application.IntegrationTests.csproj
+dotnet add test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests/CleanArchitecture.Application.IntegrationTests.csproj reference src/CleanArchitecture/CleanArchitecture.Api/CleanArchitecture.Api.csproj
+
+cd test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests
+dotnet add package Testcontainers.PostgreSql --version 3.7.0
+dotnet add package FluentAssertions  --version 6.12.0
+dotnet add package Microsoft.AspNetCore.Mvc.Testing  --version 8.0.1
+dotnet add package Microsoft.Net.Test.Sdk  --version 17.9.0
+dotnet add package xunit --version 2.6.6
+dotnet add package xunit.runner.visualstudio --version 2.5.6
+dotnet add package coverlet.collector  --version 6.0.0
+
+cd test/CleanArchitecture/CleanArchitecture.Application.IntegrationTests
+dotnet add package Microsoft.AspNetCore.Mvc.Testing --version 8.0.0-rc.2.23480.2
+
+dotnet sln add test/CleanArchitecture/CleanArchitecture.Api.Functional.Tests/CleanArchitecture.Api.Functional.Tests.csproj

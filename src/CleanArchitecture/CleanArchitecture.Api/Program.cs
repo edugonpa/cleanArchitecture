@@ -94,3 +94,5 @@ var routeGroupBuilder = app
 routeGroupBuilder.MapAlquilerEndpoints();
 
 app.Run();
+
+public partial class Program;
