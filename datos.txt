@@ -149,3 +149,5 @@ dotnet sln add test/CleanArchitecture/CleanArchitecture.Api.Functional.Tests/Cle
 dotnet sln add test/CleanArchitecture/CleanArchitecture.ArchitectureTests/CleanArchitecture.ArchitectureTests.csproj
 cd test/CleanArchitecture/CleanArchitecture.ArchitectureTests
 dotnet add package NetArchTest.Rules --version 1.3.2
+
+dotnet add package QuestPdf --version 2023.12.0
